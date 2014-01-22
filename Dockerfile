@@ -61,4 +61,4 @@ RUN echo "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" | \
 RUN echo "host    all     all   0.0.0.0/0     trust" >> /var/lib/postgresql/data/pg_hba.conf
 RUN echo "listen_addresses='*'" >> /var/lib/postgresql/data/postgresql.conf
 
-CMD service postgresql start && tail -F /var/lib/postgresql/data/serverlog
+CMD service postgresql start -e UTF-8 && tail -F /var/lib/postgresql/data/serverlog
